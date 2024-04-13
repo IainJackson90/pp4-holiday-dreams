@@ -1,1 +1,1 @@
-web: gunicorn holidaydrams.wsgi
+web: gunicorn holidaydreams.wsgi
