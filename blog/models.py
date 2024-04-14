@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 STATUS = ((0, "Draft"), (1, "Published"))
-SEASONS = ((0, "Spring"), (1, "Summer"), (2, "Autumn"), (3, "Winter"))
+SEASONS = ((1, ("Spring")), (2, ("Summer")), (3, ("Autumn")), (4, ("Winter")))
 
 # Create your models here.
 
@@ -48,9 +48,9 @@ class Recommendation(models.Model):
     recommendation = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name="blog_posts_recommendation"
     )
-    holid_season = models.SlugField(choices=SEASONS, default=0)
+    holiday_season = models.PositiveIntegerField(choices=SEASONS, default=1)
     sites = models.CharField(max_length=200)
-    holid_length = models.CharField(max_length=200)
+    holiday_length = models.CharField(max_length=200)
     # featured_image = CloudinaryField('image', default='placeholder')
     restaurants = models.CharField(max_length=200)
     to_avoid = models.CharField(max_length=200)
