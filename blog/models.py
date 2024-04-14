@@ -26,6 +26,7 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     # excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+    # approved = models.BooleanField(default=False)
 
 
 class Recommendation(models.Model):
@@ -50,4 +51,19 @@ class Recommendation(models.Model):
     bag_recommendation =  models.CharField(max_length=200)
     # Maybe add a star rating in here ?
     over_view = models.TextField()
+    # approved = models.BooleanField(default=False)
+    
+    
+class Comment(models.Model):
+    """
+    Stores a single comment created by the user, to :model:`auth.User`
+    and :model:`blog.Post`
+    """
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+                             related_name="comments")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter")
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
     
