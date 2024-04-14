@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 STATUS = ((0, "Draft"), (1, "Published"))
+SEASONS = ((0, "Spring"), (1, "Summer"), (2, "Autumn"), (3, "Winter"))
 
 # Create your models here.
 
@@ -14,12 +15,39 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
+    experience = models.TextField(blank=True)
+    excerpt = models.TextField(blank=True)
     # featured_img = CloudinaryField('image', default='placeholder')
     # recommendation = models.ForeignKey(
-    #     Recommendation, on_delete=models.CASCADE, related_name="blog_posts"
+    #     User, on_delete=models.CASCADE, related_name="blog_posts_recommendation"
     # )
     # content = models.TextField()  --> Recommendation
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    excerpt = models.TextField(blank=True)
+    # excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+
+
+class Recommendation(models.Model):
+    """
+    Stores a Recommendation of the holiday post entry related to :model:`blog.Post`.
+    """
+    # post = models.ForeignKey(Post, on_delete=models.CASCADE,
+    #                          related_name="comments")
+    # author = models.ForeignKey(
+    #     User, on_delete=models.CASCADE, related_name="commenter")
+    # destination = models.CharField(max_length=200)
+    recommendation = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="blog_posts_recommendation"
+    )
+    holid_season = models.SlugField(choices=SEASONS, default=0)
+    sites = models.CharField(max_length=200)
+    holid_length = models.CharField(max_length=200)
+    # featured_image = CloudinaryField('image', default='placeholder')
+    restaurants = models.CharField(max_length=200)
+    to_avoid = models.CharField(max_length=200)
+    cost_expected = models.CharField(max_length=200)
+    bag_recommendation =  models.CharField(max_length=200)
+    # Maybe add a star rating in here ?
+    over_view = models.TextField()
+    
