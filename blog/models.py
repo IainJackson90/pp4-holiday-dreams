@@ -57,7 +57,7 @@ class Recommendation(models.Model):
     cost_expected = models.CharField(max_length=200)
     bag_recommendation =  models.CharField(max_length=200)
     # Maybe add a star rating in here ?
-    over_view = models.TextField()
+    sites = models.TextField()
     # approved = models.BooleanField(default=False)
     
     
@@ -76,7 +76,7 @@ class Comment(models.Model):
     
     class Meta:
         ordering = ["-created_on"]
-        #  ordering = ["-created_on", "author"]             # Maybe put this in the most model aswell ?
+        #  ordering = ["-created_on", "author"]             # Maybe put this in the post model aswell ?
         
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
