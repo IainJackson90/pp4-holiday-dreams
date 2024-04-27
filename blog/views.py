@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.contrib import messages
 from .models import Post
 from .forms import CommentForm
 
@@ -12,8 +13,8 @@ class PostList(generic.ListView):
     # template_name = "post_list.html"
     template_name = "blog/index.html"
     paginate_by = 9
-  
-    
+
+
 def post_detail(request, slug):
     """
     Display an individual :model:`blog.Post`.
@@ -31,7 +32,7 @@ def post_detail(request, slug):
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
-    comment_counter = post.comments.filter(approved=True).count()
+    comment_counter = post.comments.count()
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -39,7 +40,11 @@ def post_detail(request, slug):
             comment.author = request.user
             comment.post = post
             comment.save()
-
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment was posted sucsefully'        # Have to change this because their should be no approval
+            )
+            
     comment_form = CommentForm()
 
     return render(
