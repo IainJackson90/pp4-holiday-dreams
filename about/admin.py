@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import About, CollaborateRequest
+from .models import About, Subscribe
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -11,7 +11,7 @@ class AboutAdmin(SummernoteModelAdmin):
 #       the model with the admin panel. We do it differently
 #       above because we are supplying Summernote fields.
 
-@admin.register(CollaborateRequest)
-class CollaborateRequestAdmin(admin.ModelAdmin):
+@admin.register(Subscribe)
+class SubscribeAdmin(admin.ModelAdmin):
 
     list_display = ('message', 'read',)
