@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import About
+from .forms import SubscribeForm
 # Create your views here.
 
 
@@ -12,9 +13,11 @@ def about_blog(request):
     :template:`about/about.html`
     """
     about = About.objects.all().order_by('-updated_on').first()
+    subscribe_form = SubscribeForm()
 
     return render(
         request,
         "about/about.html",
-        {"about": about},
+        {"about": about,
+         "subscribe_form": subscribe_form},
     )

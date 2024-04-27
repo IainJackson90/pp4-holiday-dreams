@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container mt-5">
@@ -23,12 +24,17 @@
         <div class="col-12 col-md-6 my-5">
             <h2>Sign up for our monthly news letter and competition!</h2>
             <p>Every month we post a news letter of the most affordable places to book your next holiday,
-                and you will be automatically put in a monthly draw to stand a chance to win a all expenses 
+                and you will be automatically put in a monthly draw to stand a chance to win a all expenses
                 paid free holiday!
             </p>
 
             <!-- add your form here. Your submit button should 
                                 have the classes of btn, btn-secondary -->
+            <form method="post">
+                {{ subscribe_form | crispy }}
+                {% csrf_token %}
+                <button class="btn btn-secondary" type="submit">Submit</button>
+            </form>
         </div>
     </div>
 </div>
