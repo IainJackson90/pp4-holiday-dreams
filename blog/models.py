@@ -72,11 +72,11 @@ class Comment(models.Model):
         User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False)                           # Change this to comment without approval
     
     class Meta:
         ordering = ["-created_on"]
-        #  ordering = ["-created_on", "author"]             # Maybe put this in the post model aswell ?
+        #  ordering = ["-created_on", "author"]             # Maybe put this in the post model as well ?
         
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
