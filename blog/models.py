@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 STATUS = ((0, "Draft"), (1, "Published"))
 SEASONS = ((1, ("Spring")), (2, ("Summer")), (3, ("Autumn")), (4, ("Winter")))
 
@@ -27,7 +28,7 @@ class Post(models.Model):
     # excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     # approved = models.BooleanField(default=False)
-    
+
     class Meta:
         ordering = ["-created_on"]
 
@@ -59,8 +60,8 @@ class Recommendation(models.Model):
     # Maybe add a star rating in here ?
     sites = models.TextField()
     # approved = models.BooleanField(default=False)
-    
-    
+
+
 class Comment(models.Model):
     """
     Stores a single comment created by the user, to :model:`auth.User`
@@ -72,11 +73,11 @@ class Comment(models.Model):
         User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)                           # Change this to comment without approval
-    
+    approved = models.BooleanField(default=False)  # Change this to comment without approval
+
     class Meta:
         ordering = ["-created_on"]
-        #  ordering = ["-created_on", "author"]             # Maybe put this in the post model as well ?
-        
+        #  ordering = ["-created_on", "author"]   # Maybe put this in the post model as well ?
+
     def __str__(self):
         return f"Comment {self.body} by {self.author}"

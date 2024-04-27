@@ -42,9 +42,10 @@ def post_detail(request, slug):
             comment.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Comment was posted sucsefully'        # Have to change this because their should be no approval
+                'Comment was posted sucsefully'
+                # Have to change this because their should be no approval
             )
-            
+
     comment_form = CommentForm()
 
     return render(
