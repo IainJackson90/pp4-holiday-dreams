@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 SEASONS = ((1, ("Spring")), (2, ("Summer")), (3, ("Autumn")), (4, ("Winter")))
+LIKE_Bool = (('Like', 'Like'),('Unlike', 'Unlike'))
 
 # Create your models here.
 
@@ -29,12 +30,20 @@ class Post(models.Model):
     # excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     # approved = models.BooleanField(default=False)
+    likes = models.ManyToManyField(
+        User,
+        related_name='post_likes',
+        blank=True,
+        )
 
     class Meta:
         ordering = ["-created_on"]
 
     def __str__(self):
         return f"{self.title} | Posted by {self.author}"
+    
+    def likes_count(self):
+        return self.likes.count()
 
 
 
@@ -82,3 +91,17 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
+    
+    
+class Like(models.Model):
+    """
+    Stores a single like entry related to :model:`auth.User`
+    and :model:`blog.Post`.
+    """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    value = models.CharField(choices=LIKE_Bool, default='Like', max_length=10)
+
+    def __str__(self):
+        return str(self.post)
+
