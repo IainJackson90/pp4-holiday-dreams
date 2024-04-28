@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -18,7 +19,7 @@ class Post(models.Model):
     )
     experience = models.TextField(blank=True)
     excerpt = models.TextField(blank=True)
-    # featured_img = CloudinaryField('image', default='placeholder')
+    featured_img = CloudinaryField('image', default='placeholder')
     # recommendation = models.ForeignKey(
     #     User, on_delete=models.CASCADE, related_name="blog_posts_recommendation"
     # )
