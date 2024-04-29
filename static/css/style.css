@@ -125,7 +125,8 @@ body {
 
 .btn-signup,
 .btn-edit, 
-.btn-style {
+.btn-style,
+.btn-secondary {
     background-color: #3C8CA7;
     color: #fff;
 }
@@ -133,7 +134,9 @@ body {
 .btn-signup:hover,
 .btn-signup:active,
 .btn-style:active,
-.btn-style:hover {
+.btn-style:hover,
+.btn-secondary:hover,
+.btn-secondary:active {
     background-color: #fff;
     color: #34A426;
 }
@@ -185,4 +188,47 @@ body {
 
 .notification-text {
     color: #34A426;
+}
+
+.success {
+    background-color: #34A426;
+    color: white;
+}
+
+/* Hero image */
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/images/hero-img.jpg");
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .hero-slogan {
+    text-shadow: 2px 2px 2px #34A426;
+  }
+
+  .hero-btn{
+    background-color: #3C8CA7;
+    color: #fff;
+    padding: .375rem .75rem;
+    text-decoration: none;
+  }
+
+  .btn-add-post:hover,
+  .btn-add-post:active {
+    background-color: #fff;
+    color: #34A426;
+    cursor: pointer;
 }
