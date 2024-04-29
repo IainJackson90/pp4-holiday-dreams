@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Post, Comment, Recommendation, Like, User
+from .models import Post, Comment, Like, User
 from .forms import CommentForm
 
 # Create your views here.
@@ -61,33 +61,32 @@ def post_detail(request, slug):
 )
 
 
-def recommendation_detail(request, Post, post_id):
-    """
-    Display an individual :model:`blog.Post`.
+# def recommendation_detail(request, slug, post_id, Post):
+#     """
+#     Display an individual :model:`blog.Post`.
 
-    **Context**
+#     **Context**
 
-    ``post``
-        An instance of :model:`blog.Post`.
+#     ``post``
+#         An instance of :model:`blog.Post`.
 
-    **Template:**
+#     **Template:**
 
-    :template:`blog/post_detail.html`
-    """
+#     :template:`blog/post_detail.html`
+#     """
     
-    queryset = Recommendation.objects
-    # recommendation = get_object_or_404(queryset, slug=slug)
-    recommendation = get_object_or_404(Post, pk=post_id)
-    # recommendation = Recommendation
+#     queryset = Recommendation.objects
+#     # recommendation = get_object_or_404(queryset, slug=slug)
+#     recommendation = get_object_or_404(Post, pk=post_id)
+#     # recommendation = Recommendation
 
-    return render(
-        request,
-        "blog/post_detail.html",
-        {
-            "post": post,
-            "recommendation": recommendation
-        },
-    )
+#     return render(
+#         request,
+#         "blog/post_detail.html",
+#         {
+#             "recommendation": recommendation
+#         },
+#     )
 
 
 def comment_edit(request, slug, comment_id):

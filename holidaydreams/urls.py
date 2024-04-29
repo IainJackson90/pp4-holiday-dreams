@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path("", include("blog.urls"), name="blog-urls"),
+    # path("chaining/", include("smart_select.urls")),
     # path('blog/', my_blog, name='blog'),
 ]

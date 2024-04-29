@@ -14,19 +14,19 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
+                                {% if "placeholder" in post.featured_img.url %}
                                 <img class="card-img-top" src="{% static 'images/placheholder.jpg' %}"
                                     alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
+                                <img class="card-img-top" src=" {{ post.featured_img.url }}" alt="{{ post.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
+                                <h2 class="card-title"> {{ post.title }} </h2>
+                                <p class="card-text"> {{ post.excerpt }} </p>
                             </a>
 
                             <hr />
@@ -48,10 +48,10 @@
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Back </a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="rounded page-link btn-style">&laquo; Back </a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}" class="rounded page-link btn-style"> NEXT &raquo;</a></li>
             {% endif %}
         </ul>
     </nav>

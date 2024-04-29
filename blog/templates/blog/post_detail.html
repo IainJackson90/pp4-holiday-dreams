@@ -25,13 +25,27 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
-                    {{ post.experience | safe }}
-                    {{ recommendation.restaurants | safe }}
+                    <div>
+                        <h2>Holiday Season</h2>
+                        <!-- <p>{{ post.holiday_season | safe }}</p> -->
+                    </div>
+                    <div>
+                        <H2>Holiday Length</H2>
+                        <p>{{ post.holiday_length | safe}}</p>
+                    </div>
+                    <div>
+                        <H2>Experience</H2>
+                        <p>{{ post.experience | safe }}</p>
+                    </div>
+                    <div>
+                        <H2>Bag Recommendation</H2>
+                        <p>{{ post.bag_recommendation | safe }}</p>
+                    </div>
+                    <div>
+                        <H2>Cost Expected</H2>
+                        <p>{{ post.cost_expected | safe }}</p>
+                    </div>
                     <!--Come back here and add a better layout-->
-                    {{ recommendation.restaurants | safe }}
-                </p>
-                <p class="card-text">
-                    {{ recommendation.restaurants | safe }}
                 </p>
             </div>
         </div>
@@ -44,21 +58,23 @@
                 <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                     {% csrf_token %}
                     {% if user in post.likes.all %}
-                      <button type="submit" name="likes_btn" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                    <button type="submit" name="likes_btn" value="{{post.slug}}" class="btn-like"><i
+                            class="fas fa-heart"></i></button>
                     {% else %}
-                      <button type="submit" name="likes_btn" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                    <button type="submit" name="likes_btn" value="{{post.slug}}" class="btn-like"><i
+                            class="far fa-heart"></i></button>
                     {% endif %}
                 </form>
                 {% else %}
                 <span class="text-secondary"><i class="far fa-heart"></i></span>
                 {% endif %}
-              <!-- The number of likes goes before the closing strong tag -->
+                <!-- The number of likes goes before the closing strong tag -->
                 <span class="text-secondary">{{ post.likes_count }} </span>
-              </strong>
+            </strong>
         </div>
         <div class="col-2">
             <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ comment_counter }}
+                <i class="far fa-comments coment-style"></i> {{ comment_counter }}
             </strong>
         </div>
         <div class="col-12">
