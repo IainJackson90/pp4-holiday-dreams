@@ -247,3 +247,18 @@ body {
     height: 30vw;
 }
 
+/* footer */
+
+.social-container a {
+    text-decoration: none;
+    font-size: larger ;
+}
+
+.social-container i {
+    color: #34A426;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-container i:hover {
+    transform: scale(1.3);
+}

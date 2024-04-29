@@ -78,9 +78,11 @@
             </strong>
         </div>
         <div class="col-2">
+            {% with comments.count as comment_counter %}
             <strong class="text-secondary">
                 <i class="far fa-comments coment-style"></i> {{ comment_counter }}
             </strong>
+            {% endwith %}
         </div>
         <div class="col-12">
             <hr>
