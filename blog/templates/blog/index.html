@@ -21,12 +21,12 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container">
+                            <div class="image-container img-container">
                                 {% if "placeholder" in post.featured_img.url %}
-                                <img class="card-img-top" src="{% static 'images/placheholder.jpg' %}"
+                                <img class="card-img-top image-size" src="{% static 'images/placheholder.jpg' %}"
                                     alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_img.url }}" alt="{{ post.title }}">
+                                <img class="card-img-top image-size" src=" {{ post.featured_img.url }}" alt="{{ post.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
