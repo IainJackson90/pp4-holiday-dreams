@@ -55,6 +55,12 @@
             </div>
         </div>
     </div>
+    <!-- Update and delete user post -->
+    <div class="card-link text-center">
+        {% if post.author.id == request.user.id %}
+        <a href="{% url 'update_post' post.slug %}" class="btn btn-secondary mb-4 mt-4">Edit post</a>
+        {% endif %}
+    </div>
     <!-- Displaying count of comments and count of likes-->
     <div class="row">
         <div class="col-2">

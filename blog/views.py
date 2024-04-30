@@ -152,7 +152,7 @@ class Like(View):
 
 class CreatePost(SuccessMessageMixin, CreateView):
     """
-    View for creating a post
+    View for creating a user post
     """
     model = Post
     template_name = "post_create.html"
@@ -162,8 +162,32 @@ class CreatePost(SuccessMessageMixin, CreateView):
 
     def form_valid(self, form):
         """
-        Adds logged in user as author for post
+        Logged in user as author for post
         """
         form.instance.author = self.request.user
         form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
+    
+    
+class PostUpdate(SuccessMessageMixin, UpdateView):
+    """
+    Updating a user post
+    """
+    model = Post
+    form_class = PostCreateForm
+    template_name = "update_post.html"
+    success_message = "Your post has been updated successfully!"
+
+    def get_queryset(self):
+        """
+        Override to get a queryset of the post.
+        Only the author can update the post.
+        """
+        queryset = super().get_queryset()
+        return queryset.filter(author=self.request.user)
+
+    def get_success_url(self):
+        """
+        Takes user back to home page after the update was successful
+        """
+        return reverse('post_detail', kwargs={"slug": self.object.slug})

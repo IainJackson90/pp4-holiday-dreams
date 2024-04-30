@@ -8,6 +8,11 @@ urlpatterns = [
             views.CreatePost.as_view(),
             name='post_create'
       ),
+      path(
+            'post_update/<slug:slug>',
+            views.PostUpdate.as_view(),
+            name='update_post'
+      ),
     path('<slug:slug>/', views.post_detail, name="post_detail"),
     path('<slug:slug>/edit_comment/<int:comment_id>',
         views.comment_edit, name='comment_edit'),
