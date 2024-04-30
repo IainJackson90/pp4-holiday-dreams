@@ -14,10 +14,14 @@
 <div class="hero-image">
     <div class="hero-text">
         <h1 class="mb-4 hero-slogan">Holiday Dreams</h1>
+        <p class="mt-4 mb-4 hero-slogan">
+            A place where you can share you adventures or sit back and read about someone elses adventures,
+            get som ideas of your next Holiday.
+        </p>
         {% if user.is_authenticated %}
         <a href="{% url 'post_create' %}" class="rounded hero-btn btn-add-post">Add a Post</a>
         {% else %}
-        <a href="{% url 'account_login' %}" class="rounded hero-btn btn-add-post">Sign Up or Log In to create a post </a>
+        <a href="{% url 'account_login' %}" class="rounded hero-btn btn-add-post">Sign Up or Log In</a>
         {% endif %}
     </div>
 </div>
@@ -52,6 +56,9 @@
 
                             <hr />
                             <p class="card-text text-muted h6">{{ post.created_on}}
+                                <span class="text-secondary .d-inline-flex"><i class="far fa-heart"></i>
+                                </span>
+                                {{ post.likes_count }}
                             </p>
                         </div>
                     </div>
