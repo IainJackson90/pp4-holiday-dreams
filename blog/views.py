@@ -1,9 +1,13 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse_lazy
+from django.utils.text import slugify
 from .models import Post, Comment, Like, User
-from .forms import CommentForm
+from .forms import CommentForm, PostCreateForm
 
 # Create your views here.
 
@@ -144,3 +148,22 @@ class Like(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class CreatePost(SuccessMessageMixin, CreateView):
+    """
+    View for creating a post
+    """
+    model = Post
+    template_name = "post_create.html"
+    form_class = PostCreateForm
+    success_url = reverse_lazy("home")
+    success_message = "Your post has been shared success!"
+
+    def form_valid(self, form):
+        """
+        Adds logged in user as author for post
+        """
+        form.instance.author = self.request.user
+        form.instance.slug = slugify(form.instance.title)
+        return super().form_valid(form)

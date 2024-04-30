@@ -3,12 +3,24 @@
 {% block content %}
 
 <!-- Hero Image -->
+<!-- <div class="hero-image">
+    <div class="hero-text">
+        <h1 class="mb-4 hero-slogan">Holiday Dreams</h1>
+        <a class="rounded hero-btn btn-add-post">Add a Post</a>
+    </div>
+</div> -->
+
+
 <div class="hero-image">
     <div class="hero-text">
-      <h1 class="mb-4 hero-slogan">Holiday Dreams</h1>
-      <a class="rounded hero-btn btn-add-post">Add a Post</a>
+        <h1 class="mb-4 hero-slogan">Holiday Dreams</h1>
+        {% if user.is_authenticated %}
+        <a href="{% url 'post_create' %}" class="rounded hero-btn btn-add-post">Add a Post</a>
+        {% else %}
+        <a href="{% url 'account_login' %}" class="rounded hero-btn btn-add-post">Sign Up or Log In to create a post </a>
+        {% endif %}
     </div>
-  </div>
+</div>
 
 <!-- index.html content starts here -->
 <div class="container-fluid">
@@ -26,7 +38,8 @@
                                 <img class="card-img-top image-size" src="{% static 'images/placheholder.jpg' %}"
                                     alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top image-size" src=" {{ post.featured_img.url }}" alt="{{ post.title }}">
+                                <img class="card-img-top image-size" src=" {{ post.featured_img.url }}"
+                                    alt="{{ post.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
@@ -56,10 +69,12 @@
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="rounded page-link btn-style">&laquo; Back </a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="rounded page-link btn-style">&laquo; Back
+                </a></li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="rounded page-link btn-style"> NEXT &raquo;</a></li>
+            <li><a href="?page={{ page_obj.next_page_number }}" class="rounded page-link btn-style"> NEXT &raquo;</a>
+            </li>
             {% endif %}
         </ul>
     </nav>

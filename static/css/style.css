@@ -236,6 +236,7 @@ body {
 /* User Images */
 
 .image-size {
+   /* display: block; */
    object-fit: cover;
    object-position: center; 
    width: 100%;
