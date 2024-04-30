@@ -191,3 +191,20 @@ class PostUpdate(SuccessMessageMixin, UpdateView):
         Takes user back to home page after the update was successful
         """
         return reverse('post_detail', kwargs={"slug": self.object.slug})
+    
+    
+class DeletePost(SuccessMessageMixin, DeleteView):
+    """
+    Deleting an existing blog post created by a user
+    """
+    model = Post
+    template_name = "delete_post.html"
+    success_url = reverse_lazy("home")
+    success_message = "Your post has been deleted successfully!"
+    
+    def test_func(self):
+        """
+        Validate that the current user is the author of the post being deleted
+        """
+        post = self.get_object()
+        return self.request.user == post.author

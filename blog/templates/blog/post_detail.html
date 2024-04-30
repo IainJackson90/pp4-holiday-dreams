@@ -59,6 +59,7 @@
     <div class="card-link text-center">
         {% if post.author.id == request.user.id %}
         <a href="{% url 'update_post' post.slug %}" class="btn btn-secondary mb-4 mt-4">Edit post</a>
+        <a href="{% url 'delete_post' post.slug %}" class="btn btn-danger mb-4 mt-4">Delete Post</a>
         {% endif %}
     </div>
     <!-- Displaying count of comments and count of likes-->
