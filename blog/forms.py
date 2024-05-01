@@ -9,7 +9,7 @@ class PostCreateForm(forms.ModelForm):
     """
     class Meta:
         model = Post
-        fields = ('title', 'excerpt', 'holiday_length', 'experience',
+        fields = ('title', 'excerpt', 'holiday_season', 'holiday_length', 'experience',
                   'bag_recommendation','cost_expected', 'featured_img',) #status
 
 

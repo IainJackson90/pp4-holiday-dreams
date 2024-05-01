@@ -18,7 +18,7 @@ class Post(models.Model):
     )
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    # holiday_season = models.CharField(max_length=10, default='spring') #choices=SEASONS,  <----- Make it work dropdown
+    holiday_season = models.CharField(max_length=200, blank=True)
     holiday_length = models.CharField(max_length=200, blank=True)
     experience = models.TextField(blank=True)
     bag_recommendation =  models.TextField(max_length=200, blank=True)
