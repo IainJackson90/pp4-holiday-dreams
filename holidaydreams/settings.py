@@ -58,6 +58,23 @@ INSTALLED_APPS = [
     'smart_selects',
 ]
 
+SUMMERNOTE_CONFIG = {
+    'iframe': False,
+    'summernote': {
+        'width': '100%',
+        'height': '300px',
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['para', ['ul', 'ol']],
+            ['insert', ['link', 'picture']],
+            ['view', ['fullscreen']],
+        ],
+        'disableResizeEditor': True,
+        'styleTags': ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    },
+}
+
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
