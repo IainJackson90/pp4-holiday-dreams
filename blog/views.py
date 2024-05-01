@@ -9,6 +9,7 @@ from django.utils.text import slugify
 from .models import Post, Comment, Like, User
 from .forms import CommentForm, PostCreateForm
 
+
 # Create your views here.
 
 
@@ -159,6 +160,7 @@ class CreatePost(SuccessMessageMixin, CreateView):
     form_class = PostCreateForm
     success_url = reverse_lazy("home")
     success_message = "Your post has been shared success!"
+    
 
     def form_valid(self, form):
         """
