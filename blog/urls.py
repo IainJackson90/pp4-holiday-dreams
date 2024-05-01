@@ -16,4 +16,8 @@ urlpatterns = [
          views.comment_delete, name='comment_delete'),
     path('like/<slug:slug>', views.Like.as_view(),
          name='post_like'),
+    path('500/', views.page_not_found,
+         name='error500'),
+    path('404/', views.server_error,
+         name='error404'),
 ]

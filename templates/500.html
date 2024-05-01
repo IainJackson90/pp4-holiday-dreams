@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h2 class="card-body hero-slogan">500 - INTERNAL SERVER ERROR</h2>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="text-center">
+            <p>Due to an internal server on our side your request couldn't be handled right now.</p>
+            <p>Please try again later <a href="{% url 'home' %}" class="btn btn-secondary">Home</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

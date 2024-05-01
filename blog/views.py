@@ -210,3 +210,17 @@ class DeletePost(SuccessMessageMixin, DeleteView):
         """
         post = self.get_object()
         return self.request.user == post.author
+    
+    
+def page_not_found(request, exception):
+    """
+    404 Page Not Found Error.
+    """
+    return render(request, '404.html', status=404)
+
+
+def server_error(request):
+    """
+    500 Internal Server Error.
+    """
+    return render(request, '500.html', status=500)
