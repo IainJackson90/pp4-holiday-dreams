@@ -236,7 +236,8 @@ I used three colors in this web App and tried sticking to the 60, 30, 10 rule of
 
 # Features
 
-Each Feature was designed to be as user friendly as possible with a clear direction of what is expected from them trough use of visual notifications 
+Each Feature was designed to be as user friendly as possible with a clear direction of what is expected from them trough use of visual notifications
+All these feature ma differ dependant on the size of the device being used to view the web app
 
 ## Existing Features
 
@@ -266,6 +267,27 @@ Each Feature was designed to be as user friendly as possible with a clear direct
 - The button on the hero image will let a signed in user add there own post but if you have not singed int the button will direct the user to the log in or sign up page
 
 <details>
+<summary> Notifications
+</summary>
+
+![Notifications](assets/images/notification.png)
+</details>
+
+- Whenever the user logs in, logs out perform any kind of CRUD functionality there will be a notification pop up informing them of any changes they have made 
+- The message will be clear of the type of action that has been performed by the user 
+
+
+<details>
+<summary> Model
+</summary>
+
+![Model](assets/images/deletemodel.png)
+</details>
+
+- Whenever the user wants to delete any post or comment a model will pop up confirming the user with a message of the action they are doing and if they are sure they want to continue with this action 
+- The buttons on the model change colors when you hover over them
+
+<details>
 <summary> Posts
 </summary>
 
@@ -279,6 +301,19 @@ Each Feature was designed to be as user friendly as possible with a clear direct
 - Under the title will be as hort excerpt of what you could expect of reading the post
 - Under the excerpt will be a line separating the time and date the post was published as wel as how many likes the post have got
 - When you hover over the excerpt text it will change color to green  
+
+<details>
+<summary> Create a post
+</summary>
+
+![Create a post](assets/images/createapost.png)
+</details>
+
+- When the user clicks on the create a oust button it will direct them to the CREATE A POST page
+- This page has field so be populated by the blogger and is created for a more serious blogger giving them all the tools they need to create the perfect blog 
+- Some of the text field will have text editing tools
+- The blogger can add a image for the home page 
+- The submit and cancel button changes colors when hover over them
 
 <details>
 <summary> Reading a post
@@ -318,6 +353,72 @@ You can only use the like button if you are logged in as a user
 - When you hover over the button the text will to change color to green
 - The footer has all the social media links that will direct you the social accounts of this Web App 
 - When you hover over the social icons they will pop up with a zoom in effect
+
+<details>
+<summary> About Page
+</summary>
+
+![About Page](assets/images/aboutpage.png)
+</details>
+
+- The about page will have a description of what the Webb App is about also with a timestamp when last the about content last was updated 
+- There are some fields that if the user wants to sign up for the news letter they could do so
+- the submit button changes color when you hover over it
+
+<details>
+<summary> Sing Out Page
+</summary>
+
+![Sing Out Page](assets/images/signout.png)
+</details>
+
+- If the user wants to log out they will be directed to the Sign out page 
+- The button changes color when you hover over it
+
+<details>
+<summary> Sing In Page
+</summary>
+
+![Sing In Page](assets/images/signin.png)
+</details>
+
+- When a user wants to sign up or log in they will be brought to this page
+- The sing up displayed in a different color is a link to a sign up page 
+- The color of the button changes color when you hover over it
+
+<details>
+<summary> Sing Up Page
+</summary>
+
+![Sing Up Page](assets/images/signup.png)
+</details>
+
+- When the user clicked on the sign up link on the Sing in form it will direct them to this page
+- This page will prompt the user with clear information of what is required from the to create an account
+
+<details>
+<summary> 404 - Page not found page
+</summary>
+
+![404 - Page not found page](assets/images/pagenotfound.png)
+</details>
+
+- This is a custom 404 page not found page that will appear if the user request a page that can not be found
+- It displays a clear message to the user of what just happened
+- The button will redirect the user to the home page
+- The button changes color when you hover over it 
+
+<details>
+<summary> 500 - Internal server error page
+</summary>
+
+![500 - Internal server error page](assets/images/internalservererror.png)
+</details>
+
+- This is a custom 500 internal server error page that will appear if there is a server error
+- It displays a clear message to the user of what just happened
+- The button will redirect the user to the home page
+- The button changes color when you hover over it 
 
 ## Future Features
 
