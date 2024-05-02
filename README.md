@@ -9,7 +9,7 @@ Also see what locations and experience you as a adventurer would like to experie
 
 ## [Click here to view website](https://holiday-dreams-c63c9b39c29f.herokuapp.com/)
 
-![Am I Responsive]()
+![Am I Responsive](assets/images/amiresponsive.png)
 
 # About Holiday Dreams
 
@@ -461,7 +461,7 @@ The testing will be done manually
 ## Manual Testing
 
 | What was tested as a visitor | Result | Outcome |
-|:---:|:---:|:---:|
+|:---|---:|:---:|
 | Navigation bar links | Viewed every page | Works as expected |
 | The logo on the navigation bar | Takes you to the home page when clicked on | Works as expected|
 | Clicking the Sign Up or Log in button | Takes yoy to the sign in page | Works as expected|
@@ -469,21 +469,50 @@ The testing will be done manually
 | Clicked on the hart like icon | Nothing happened |Works as expected|
 | Clicked on the navigation button at the bottom of the page | Took me to the next page | Works as expected |
 | Clicked on the social links in th footer | Directs me to the social pages | Works as expected |
-|Sign up to be a user | Shows I am now singed with user name notification | Works as expected |
+|Sign up to be a user | Shows I am now signed with user name notification | Works as expected |
+
 
 | What was tested as a User | Result | Outcome |
-|:---:|:---:|:---:|
-|------------|-----------|------------|
-|------------|-----------|------------|
-|------------|-----------|------------|
-|------------|-----------|------------|
-|------------|-----------|------------|
-|------------|-----------|------------|
-|------------|-----------|------------|
-|------------|-----------|------------|
+|:---|---:|:---:|
+| Clicked on the add a post button | Directed me to the create a post page | Works as expected |
+| Clicked on the cancel button on the create a post page | Directed me to the home page | Works as expected |
+| Populated all the fields and clicked on the Submit button on the create a post page | Post was added | Works as expected |
+| Clicked on the like button | added a like or removed it it | Works as expected |
+| Clicked on the edit post button | Could edit the post I created | Works as expected |
+| Clicked on the delete post button  | Deleted the post | Works as expected |
+| Populated the comment text area and clicked the submit button | Created a comment underneath the post|Works as expected |
+| Clicked on the delete button on the comments | Deleted the comment | Works as expected |
+| Clicked on the edit button on the comments | could edit the comment | Works as expected |
+| Populated the fields on the about page and clicked the submit button | Submitted successfully | Works as expected |
+| Signed out button was clicked | Singed me out and directed me to the home page | Works as expected |
 
 
-![Manual Testing]()
+| Notifications and errors | Result | Outcome |
+|:---|---:|:---:|
+| You are not logged in | Notified when you are not logged in | Works as expected |
+| You have signed out | Notified when you have signed out | Works as expected |
+| Successfully signed in as ... | Notified when you have signed in | Works as expected |
+| You are logged in as ... | Notified who you are signed in as | Works as expected |
+| Your post has been shared success! | Notified that post was created successful | Works as expected |
+| Your post has been updated successfully! | Notified that post was updated successful | Works as expected |
+| Comment was posted sucsefully | Notified that comment was successful | Works as expected |
+| Comment was successfully updated! | Notified that comment was updated successful | Works as expected |
+| Are you sure you want to delete your comment? This action cannot be undone. | Notified that before comment was deleted | Works as expected |
+| Comment deleted! | Notified that comment was deleted successful | Works as expected |
+| Are you sure you want to delete this post? This can not be undone!!  | Notified that before Post was deleted | Works as expected |
+| Your post has been deleted successfully! | Notified that post was deleted successful | Works as expected |
+| Subscribed successfully! | Message after singing up for the news letter | Works as expected |
+| 404 - PAGE NOT FOUND | When searching for a page that does not exist | Works as expected |
+
+
+| Layout and built in functionality | Result | Outcome |
+|:---|---:|---:|
+| Posts | Viewed from latest to oldest | Works as expected |
+| Time stamps | Views the time a post or comment is created | Works as expected|
+| Like ikon on index home page | Displays the correct count of likes | Works as expected|
+| Comment counter | Counts the correct amount of comments | Works as expected |
+| Author banner | Shows the correct author |Works as expected|
+
 
 ## Validator Testing
 
@@ -493,20 +522,60 @@ The testing will be done manually
 
 # Deployment
 
+## Heroku
+
 1. Login to Heroku
 2. On the Heroku dashboard click on 'New'
 3. Select 'Create New App'
 4. Add an app name (Must be a unique name) and select your region
 5. Click 'Create App'
-6. On the next page at the top click 'Settings' then 'Config Vars'
-7. Click 'Reveal Config Vars' ....................................
-8. Scroll down and click 'Buildpack' ......................
-9. 'Add'.............................
-10. At the top of the page again, click 'Deploy'
-11. Click on 'Github' as your deployment method
-12. Search the relevant repo and link these
-13. Once linked, select 'Automatic deploys from' or 'Manual Deploy'
-14. The app will now be hosted on Heroku.
+
+#### Prepare the workspace environment & settings.py
+
+1. Create an env.py, requirements.txt & Procfile in the main directory of your GitPod workspace
+2. Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py
+3. Import the env.py file in your settings.py file and add the SECRETKEY and DATABASE_URL file paths
+4. Comment the default database configuration out
+5. Save files, make migrations and migrate
+6. Add the Cloudinary URL to the env.py file
+7. Add the Cloudinary libraries to the list of installed apps in settings.py
+8. Add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path
+9. Link the file to the templates directory in Heroku
+10. Change the templates directory to TEMPLATES_DIR
+11. Add Heroku to the ALLOWED_HOSTS list in settings.py ['app_name.heroku.com', 'localhost']
+12. In settings.py ensure DEBUG = False
+
+#### Ensure the following Config Vars are added in Heroku
+
+1. SECRET_KEY - Any Django secret key
+2. CLOUDINARY_URL - Your Cloudinary API key
+3. PORT = 8000
+4. DISABLE_COLLECTSTATIC = 1 - this is temporary, will be removed for the final deployment
+5. DATABASE_URL - Your ElephantSQL database URL
+#### Heroku to deploy
+
+1. At the top of the page again, click 'Deploy'
+2. Click on 'Github' as your deployment method
+3. Search the relevant repo and link these
+4. Once linked, select 'Automatic deploys from' or 'Manual Deploy' (Manually deployed branches will need re-deploying each time the GitHub repository is updated)
+5. The app will now be hosted on Heroku
+6. Click 'Open App' to view the deployed site.
+
+## ElephantSQL (Database)
+
+1. Login to ElephantSQL
+2. Click Create New Instance to create a new database
+3. Provide a name, usually the project name would be used here
+4. Select the Free plan
+5. Select your closest Region and Data Center
+6. Once created, click on the newly created database name
+7. The database URL and Password can be viewed here.
+
+## Cloudinary (Databse that stores the images)
+The API platform has been used to store images uploaded by users of the webpage
+1. Login to Cloudinary
+2. In the Dashboard, you can copy your API Environment Variable
+3. Be sure to remove the CLOUDINARY_URL= as part of the API value; this is the key in Config vars.
 
 - ## _Cloning the GitHub repository_
 
@@ -516,7 +585,7 @@ This will download a full copy to your desktop
 2. Find the repository you wish to clone
 3. Find the green code button top right corner
 4. Select "Local", copy the HTTPS URL
-5. Go to Codeanywhere and navigate to "New Workspace"
+5. Go to Gitpod Workspace and navigate to "New Workspace"
 6. Paste the URL into the space provided
 7. Click "Create"
 
@@ -531,24 +600,70 @@ Will allow you to create a copy of the repository so changes can be made that wi
 
 # Technologies Used
 
-- []() to write the code
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) For the front end
+- [CSS](https://en.wikipedia.org/wiki/CSS) For some styling of the html
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript) For some functionality of the webpage
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) main language used
+
+- [Bootstrap](https://getbootstrap.com/) Layout and styling
+- [Django](https://www.djangoproject.com/) Template
+- Crispy forms Form templates 
+- [Summernote](https://summernote.org/) For form templates
+
 - [Git](https://git-scm.com/) Version control
 - [Github](https://github.com/) storing files online and for deployment
 - [Heroku](https://www.heroku.com/) to deploy the WebApp
+- [elephantsql](https://www.elephantsql.com/) For database 
+- [Cloudinary](https://cloudinary.com/) Used for online static file storage
+
 - [CI Python Linter](https://pep8ci.herokuapp.com/) Validate the code
 - [amiresponsive](https://ui.dev/amiresponsive) to check responsiveness
-- []() for logo
-- []() to create flow chart
+- []() For
+- []() For 
+- []() For
+- []() For
+- []() For
+- []() For 
+- []() For
+
+- [Wire Frames](https://balsamiq.com/) For wire Frames
+- [dbdiagram](https://dbdiagram.io/home) For Database mockup
 - [Snipping Tool](https://freesnippingtool.com/download) to create sniped images
+- [colors tool](https://coolors.co/34a426-48817a-3c8ca7) Create color pallet
+
+- []() For
+- []() For 
+- []() For
+- []() For
+- []() For
+- []() For 
+- []() For
+
 
 # Credits
 
 - Code Institute for the learning content provided
 - Harry Dhillon my assigned mentor to give advise on the project
+- Juliia stand in mentor while Harry was away
 - Nicole Jackson my wife a student at code institute for constructive criticism
-- Slack community
-- [stackoverflow](https://stackoverflow.com/questions/26260950/how-can-i-randomly-choose-a-maths-operator-and-ask-recurring-maths-questions-wit ) guidence of project 
-- [w3schools](https://www.w3schools.com/python/trypython.asp?filename=demo_ref_random_randint) -------------
-- []() ----------------
-- [stackoverflow](https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal) ----------- 
+- Blog Walk Trough project
+
+- [Slack Comunity](https://github.com/roc-11/pp4-jetset-journal) roc-11
+- [Slack Comunity](https://github.com/KimBergstroem/gamers_insight-CRUD-Blog-App) KimBergstroem
+- [Slack Comunity](https://github.com/helenmurugan/the-groomers-network?tab=readme-ov-file) helenmurugan
+- [Slack Comunity](https://app.slack.com/client/T0L30B202/search) Congiguring summernote
+
+- [stackoverflow](https://stackoverflow.com/questions/61058107/remove-char-from-the-required-field-label-in-form ) Removing the astrix from crispy forms 
+- [stackoverflow](https://stackoverflow.com/questions/68968059/how-can-i-allow-users-to-create-their-own-posts-in-django) how to create user posts
+
+- [w3schools](https://www.w3schools.com/howto/howto_css_hero_image.asp) Hero image coding help
+
+- [sarahtitus](https://www.sarahtitus.com/25-best-travel-destinations-color-palettes/) For color pallet insperation
+- [backpackMe](https://bkpk.me/traveling-to-india-during-covid-19-restrictions/) TRAVELING TO INDIA DURING COVID-19 RESTRICTIONS
+- [On The Luce](https://www.ontheluce.com/weekend-in-neath-port-talbot-wales/) A WEEKEND IN NEATH PORT TALBOT, WALES: 2-DAY ITINERARY
+- [On The Luce](https://www.ontheluce.com/things-to-do-in-symi-greece/) SHIPS AND SPONGES: THE BEST THINGS TO DO IN SYMI, GREECE
+
+- [pexels](https://www.pexels.com/photo/lake-and-mountain-417074/) Hero image
+- [unsplash](https://unsplash.com/s/photos/placeholder) For Placeholder iamge
+- [Unsplash](https://unsplash.com/photos/green-artificial-palm-tree-on-seashore-7RyfX2BHoXU) For about image
+- [font awsome](https://fontawesome.com/v5/icons/twitter?f=brands&s=solid) For icons
