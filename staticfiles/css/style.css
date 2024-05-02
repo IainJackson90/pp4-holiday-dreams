@@ -109,10 +109,6 @@ body {
     color: #34A426;
 }
 
-/* .page-link {
-    border-radius: 5px;
-} */
-
 .post-title {
     margin-top: 10%;
     margin-left: 5%;
@@ -236,7 +232,6 @@ body {
 /* User Images */
 
 .image-size {
-   /* display: block; */
    object-fit: cover;
    object-position: center; 
    width: 100%;
@@ -272,5 +267,5 @@ body {
 }
 
 .rounded-corners {
-    border-radius: 5px;
+    border-radius: 2px 2px 2px 2px;
 }
