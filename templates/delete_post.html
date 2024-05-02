@@ -15,7 +15,7 @@
         This can not be undone!!
     </p>
     {{ form }}
-    <input type="submit" value="Confirm" class="btn btn-danger">
-    <a href="{% url 'post_detail' post.slug  %}" class="cancel-link btn btn-secondary ">Cancel</a>
+    <input type="submit" value="Confirm" class="btn btn-danger mb-4">
+    <a href="{% url 'post_detail' post.slug  %}" class="cancel-link btn btn-secondary mb-4 ">Cancel</a>
 </form>
 {% endblock %}

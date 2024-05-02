@@ -284,8 +284,18 @@ All these feature ma differ dependant on the size of the device being used to vi
 ![Model](assets/images/deletemodel.png)
 </details>
 
-- Whenever the user wants to delete any post or comment a model will pop up confirming the user with a message of the action they are doing and if they are sure they want to continue with this action 
+- Whenever the user wants to delete comment a model will pop up confirming the user with a message of the action they are doing and if they are sure they want to continue with this action 
 - The buttons on the model change colors when you hover over them
+
+<details>
+<summary> Post Delete
+</summary>
+
+![Post Delete](assets/images/postdelete.png)
+</details>
+
+- When a user wants to delete there post they will be prompt with this page making sure of the users actions
+- The buttons change color when you hover over them
 
 <details>
 <summary> Posts
