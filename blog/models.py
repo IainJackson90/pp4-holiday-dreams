@@ -78,7 +78,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     """
-    Stores a single comment created by the user, to :model:`auth.User`
+    Stores a comment created by the user, to :model:`auth.User`
     and :model:`blog.Post`
     """
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
@@ -99,7 +99,7 @@ class Comment(models.Model):
     
 class Like(models.Model):
     """
-    Stores a single like entry related to :model:`auth.User`
+    Stores a like related to :model:`auth.User`
     and :model:`blog.Post`.
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE)

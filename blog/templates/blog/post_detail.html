@@ -40,7 +40,7 @@
                     </div>
                     <div>
                         <h3>Experience</h3>
-                        <p >{{ post.experience | safe }}</p>
+                        <p>{{ post.experience | safe }}</p>
                     </div>
                     <div>
                         <h3>Bag Recommendation</h3>
@@ -118,9 +118,10 @@
                     </p>
                     {% endif %} -->
                     {% if user.is_authenticated and comment.author == user %}
-                    <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
-                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                    <button class="btn btn-delete btn-danger " comment_id="{{ comment.id }}">Delete</button>
+                    <button class="btn btn-edit btn-secondary" comment_id="{{ comment.id }}">Edit</button>
                     {% endif %}
+                    <hr class="col-md-12">
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
