@@ -1,7 +1,7 @@
 # Holiday Dreams
 
 This is a Web App where a user can read about peoples adventures of holidays they have experienced and also comment,
-or like the post as well as post there own Dream Holiday experience.
+or like the post as well as post their own Dream Holiday experience.
 
 The goal is to make the user aware of prices in different locations and what baggage people have taken in the different seasons.
 
@@ -14,7 +14,7 @@ Also see what locations and experience you as a adventurer would like to experie
 # About Holiday Dreams
 
 1. Create a space where people with the same interest can share the experiences and opinions 
-2. Create an environment that gives users some insight of planing there next holiday  
+2. Create an environment that gives users some insight of planning there next holiday  
 3. Share your holiday experience with others
 4. A place that is created only for holiday bloggers
 
@@ -28,25 +28,25 @@ Also see what locations and experience you as a adventurer would like to experie
   - Clear visually appealing landing page that is descriptive
   - All posts have are displayed with a big image that will catch the attention of a user
   - Nav bar clearly showing how many pages there are
-  - Can open a post and read it but can not comment or like it unless singed in
+  - Can open a post and read it but can not comment or like it unless signed in
 
 - Returning visitor
 
   - Will want to create an account 
-  - Will post there own user posts 
+  - Will post their own user posts 
   - Will comment and like other users post 
   - Will read a post or comment, like a blog on there spare time they have 
 
 - Frequent user
 
-  - Will want to sing up for the newsletter and competition
+  - Will want to sign up for the newsletter and competition
   - Will use the blogs info to make a informed decision of their next holiday
   - Will be a user that likes to blog regularly 
 
 ## Strategy
 
 This Web App is created to provide a community of holiday bloggers sharing all there experiences of there travels,
-other user will live some of these experiences trough reading other bloggers posts, as well create some of there own memories.
+Other users will live some of these experiences through reading other bloggers posts, as well create some of their own memories.
 
 In the grand scheme of connecting people that share the same interest in traveling
 
@@ -58,10 +58,10 @@ The Webb App Will :
 - Allow a user to create an account
 - Let a user log In or Log out
 - Let a create a post 
-- Let the user have full CRUD functionality of there own posts
+- Let the user have full CRUD functionality of their own posts
 - Let the user comment on like another user post
-- Let the user have full CRUD functionality of there own comments
-- The user will be able to sing up for a news letter as well be entered into a draw 
+- Let the user have full CRUD functionality of their own comments
+- The user will be able to sign up for a newsletter as well be entered into a draw 
 
 ## Structure
 
@@ -93,10 +93,10 @@ I have created a wire frame of what I expected the Webb app to look like, but as
 </details>
 
 <details>
-<summary> Sing Up Page
+<summary> Sign Up Page
 </summary>
 
-![Sing Up Page](assets/images/wsignup.png)
+![Sign Up Page](assets/images/wsignup.png)
 </details>
 
 <details>
@@ -130,8 +130,8 @@ I have created a wire frame of what I expected the Webb app to look like, but as
 
 ## Database diagram
 
-This is a diagram of the models it has been altered during development and not all models were implemented and others where created instead to create a more user friendly experience.
-The recommendation model was removed and instead some of the fields was incorporated into the post field it made more sense to me at the time to do it this way after with full user UX in mind.
+This is a diagram of the models that have been altered during development and not all models were implemented and others were created instead to create a more user friendly experience.
+The recommendation model was removed and instead some of the fields were incorporated into the post field. It made more sense to me at the time to do it this way after with full user UX in mind.
 I have added a Like model after to create a user interaction with a post.
 
 
@@ -147,25 +147,25 @@ I have added a Like model after to create a user interaction with a post.
 
 1. AllAuth user Model 
 - It is a default model used by Django authentication
-- It comes with Standard login user authentication promoting the user to log in or sign up
-- Is is a one to many relationship with user post as the user can have many post but the post has only one author, each post will be authenticated to see if the user is logged in and singed up (checks if the user exists)
+- It comes with Standard login user authentication prompting the user to log in or sign up
+- Is is a one to many relationship with user post as the user can have many post but the post has only one author, each post will be authenticated to see if the user is logged in and signed up (checks if the user exists)
 
 2. Post model
 - Is is a one to many relationship with user post as the user can have many post but the post has only one author 
 - the post model will prompt a user to populate some fields from the user's end but will also have a few auto filled fields 
-- The author field will be used as a ForeingKey tht will be the main link to a user
+- The author field will be used as a Foreign Key that will be the main link to a user
 - Fields the user can fill out are title, holiday_season, holiday_length, experience, bag_recommendation, excerpt cost_expected, featured_img
 - Fields that will be auto generated author, slug, created_on, status, updated_on 
 
 3. Comment model
-- Will allow a verified log in user to comment on another user post
+- Will allow a verified login user to comment on another user post
 - This is a many to many relationship towards a post but a many to one relationship regards to a single user
 - This model will use post and author as foreigner for verification of a user as well as linking the comment to the user that left the comment
 - The body field will be populated by the user
 - created_on Will be auto generated with a time and date of when a user made a comment
 
 4. Like model
-- The user and post field are ForeingKeys used to insure a user can only like a post once but a post can be liked by many users
+- The user and post field are Foreign Keys used to insure a user can only like a post once but a post can be liked by many users
 - This is a many to many relationship towards a post but a many to one relationship regards to a single user
 
 5. About Model 
@@ -178,7 +178,7 @@ I have added a Like model after to create a user interaction with a post.
 
 ## Agile Methodology
 
-This the principal I used creating the Wbb App focussed on users stories and would only be marked as complete when t the user stories was met to a satisfactory standard 
+This the principal I used creating the Web App focussed on users stories and would only be marked as complete when t the user stories was met to a satisfactory standard 
 
 ### Epics
 
@@ -220,7 +220,7 @@ However I could have payed more attention to this board and update progress on i
 
 
 ## Color pallet of the App
-I created the Webb App with the mindset of creating a relaxing ambiance by using natural neutral colors that give you a feeling of having a holiday ith good weather and gets you not too overwhelmed and hopefully gets the user to blog or read some post.
+I created the Web App with the mindset of creating a relaxing ambiance by using natural neutral colors that give you a feeling of having a holiday with good weather and gets you not too overwhelmed and hopefully gets the user to blog or read some post.
 I used three colors in this web App and tried sticking to the 60, 30, 10 rule of using colors.
 
 - Ten percent more or less of the color #34A426
@@ -236,8 +236,8 @@ I used three colors in this web App and tried sticking to the 60, 30, 10 rule of
 
 # Features
 
-Each Feature was designed to be as user friendly as possible with a clear direction of what is expected from them trough use of visual notifications
-All these feature ma differ dependant on the size of the device being used to view the web app
+Each Feature was designed to be as user friendly as possible with a clear direction of what is expected from them through use of visual notifications
+All these feature may differ depending on the size of the device being used to view the web app
 
 ## Existing Features
 
@@ -261,10 +261,10 @@ All these feature ma differ dependant on the size of the device being used to vi
 ![Hero Image](assets/images/hero-image.png)
 </details>
 
-- The hero image is visually descriptive setting a ambience of adventure and relaxation as wel as traveling and holiday vibes
-- At the top of the hero image on th far right will be a notification displayed in green to notify the user if they are logged in or not 
-- In hte centre of the hero image is a short description of what to expect from the Web App
-- The button on the hero image will let a signed in user add there own post but if you have not singed int the button will direct the user to the log in or sign up page
+- The hero image is visually descriptive setting a ambience of adventure and relaxation as well as traveling and holiday vibes
+- At the top of the hero image on the far right will be a notification displayed in green to notify the user if they are logged in or not 
+- In the center of the hero image is a short description of what to expect from the Web App
+- The button on the hero image will let a signed in user add their own post but if you have not signed int the button will direct the user to the log in or sign up page
 
 <details>
 <summary> Notifications
@@ -294,7 +294,7 @@ All these feature ma differ dependant on the size of the device being used to vi
 ![Post Delete](assets/images/postdelete.png)
 </details>
 
-- When a user wants to delete there post they will be prompt with this page making sure of the users actions
+- When a user wants to delete their post they will be prompt with this page making sure of the users actions
 - The buttons change color when you hover over them
 
 <details>
@@ -304,12 +304,12 @@ All these feature ma differ dependant on the size of the device being used to vi
 ![posts](assets/images/posts.png)
 </details>
 
-- The Body of the page under the hero image is where all the post will displayed with captivating images in a libary style effect to draw a user attention to the posts
+- The Body of the page under the hero image is where all the post will displayed with captivating images in a library style effect to draw a user attention to the posts
 - The post will display from the latest to the oldest posts
 - On each image will be a banner at the bottom left displaying the author of the post
 - Under the image will be a title of of the post 
-- Under the title will be as hort excerpt of what you could expect of reading the post
-- Under the excerpt will be a line separating the time and date the post was published as wel as how many likes the post have got
+- Under the title will be as short excerpt of what you could expect of reading the post
+- Under the excerpt will be a line separating the time and date the post was published as well as how many likes the post have got
 - When you hover over the excerpt text it will change color to green  
 
 <details>
@@ -342,7 +342,7 @@ All these feature ma differ dependant on the size of the device being used to vi
 ![Reading a post At the bottom](/assets/images/bottomofpost.png)
 </details>
 
-- At the bottom of a post created by the author will be two buttons that will give them a option to edit or delete the post they have created.
+- At the bottom of a post created by the author will be two buttons that will give them an option to edit or delete the post they have created.
 These buttons will ot be visible to any other user that is not the creator of the post, they also change color when you hover over them 
 - There is a like icon that is not a full color red if the user did not click on it once it has been clicked on it will change color to a full red and the count next to it will increase by one this can only be done once on a post per user if it is clicked again it will remove one count on the counter as well change color back to a empty red color.
 You can only use the like button if you are logged in as a user
@@ -359,7 +359,7 @@ You can only use the like button if you are logged in as a user
 ![Footer](assets/images/footer.png)
 </details>
 
-- At the bottom of the page above the footer will be a button that will help you navigate trough the pages to older posts that hse been created( A page will need nine post before it will create another page)
+- At the bottom of the page above the footer will be a button that will help you navigate through the pages to older posts that has been created( A page will need nine post before it will create another page)
 - When you hover over the button the text will to change color to green
 - The footer has all the social media links that will direct you the social accounts of this Web App 
 - When you hover over the social icons they will pop up with a zoom in effect
@@ -371,8 +371,8 @@ You can only use the like button if you are logged in as a user
 ![About Page](assets/images/aboutpage.png)
 </details>
 
-- The about page will have a description of what the Webb App is about also with a timestamp when last the about content last was updated 
-- There are some fields that if the user wants to sign up for the news letter they could do so
+- The about page will have a description of what the Web App is about also with a timestamp when last the about content last was updated 
+- There are some fields that if the user wants to sign up for the newsletter they could do so
 - the submit button changes color when you hover over it
 
 <details>
@@ -386,10 +386,10 @@ You can only use the like button if you are logged in as a user
 - The button changes color when you hover over it
 
 <details>
-<summary> Sing In Page
+<summary> Sign In Page
 </summary>
 
-![Sing In Page](assets/images/signin.png)
+![Sign In Page](assets/images/signin.png)
 </details>
 
 - When a user wants to sign up or log in they will be brought to this page
@@ -397,10 +397,10 @@ You can only use the like button if you are logged in as a user
 - The color of the button changes color when you hover over it
 
 <details>
-<summary> Sing Up Page
+<summary> Sign Up Page
 </summary>
 
-![Sing Up Page](assets/images/signup.png)
+![Sign Up Page](assets/images/signup.png)
 </details>
 
 - When the user clicked on the sign up link on the Sing in form it will direct them to this page
@@ -433,9 +433,9 @@ You can only use the like button if you are logged in as a user
 ## Future Features
 
 - Create a my profile or the users that sing up
-- Have a search feature for a user that is singed in
+- Have a search feature for a user that is signed in
 - Have a report feature to report inappropriate blogs, and comments
-- Add a admin Profile to the Webb app with some admin powers to monitor the web app
+- Add a admin Profile to the Web app with some admin powers to monitor the web app
 - Add a announcement page where winners of the draw could be displayed 
 - Bug report Page
 - Updated more user friendly create a post form
@@ -447,14 +447,15 @@ The testing will be done manually
 
 ## Known Bugs
 
-1. The Hero image might have too mush hight on smaller devices
+1. The Hero image might have too much higher on smaller devices
 2. The Post on the home page are big (not sure if I like it that way or if I want to change it, if I had a user base audience this could be reviewed)
 3. When a user leaves a comment and refreshes the page web browser it will duplicate there comment 
+4. Django admin panel the post model, experience field and the about model, body field the summernote text editor is a bit small
 
 ## Fixed Bugs
 
-1. I originally wanted to have a dropdown of different seasons on the create a post page and I could only get it to accept a integer value witch was not working correctly so instead opted to use a text field 
-2. At first i used a text fields for the create a post form but the text field did not alow for any paragraphs or spacing the text did not look pleasing at all, i then used summernote editors instead
+1. I originally wanted to have a dropdown of different seasons on the create a post page and I could only get it to accept a integer value which was not working correctly so instead opted to use a text field 
+2. At first i used a text fields for the create a post form but the text field did not allow for any paragraphs or spacing the text did not look appealing at all, i then used summernote editors instead
 3. The summernote editors in the create a post would be adaptive to smaller devices after a lot of research I figured out that I could customize summernote editor in the settings.py file
 4. Other bugs are minor spacing of buttons and layouts that had been fixed 
 
@@ -464,12 +465,12 @@ The testing will be done manually
 |:---|---:|:---:|
 | Navigation bar links | Viewed every page | Works as expected |
 | The logo on the navigation bar | Takes you to the home page when clicked on | Works as expected|
-| Clicking the Sign Up or Log in button | Takes yoy to the sign in page | Works as expected|
+| Clicking the Sign Up or Log in button | Takes you to the sign in page | Works as expected|
 | Clicking on a post | Opens up the post | Works as expected |
 | Clicked on the hart like icon | Nothing happened |Works as expected|
 | Clicked on the navigation button at the bottom of the page | Took me to the next page | Works as expected |
-| Clicked on the social links in th footer | Directs me to the social pages | Works as expected |
-|Sign up to be a user | Shows I am now signed with user name notification | Works as expected |
+| Clicked on the social links in the footer | Directs me to the social pages | Works as expected |
+|Sign up to be a user | Shows I am now signed with username notification | Works as expected |
 
 
 | What was tested as a User | Result | Outcome |
@@ -484,7 +485,7 @@ The testing will be done manually
 | Clicked on the delete button on the comments | Deleted the comment | Works as expected |
 | Clicked on the edit button on the comments | could edit the comment | Works as expected |
 | Populated the fields on the about page and clicked the submit button | Submitted successfully | Works as expected |
-| Signed out button was clicked | Singed me out and directed me to the home page | Works as expected |
+| Signed out button was clicked | Signed me out and directed me to the home page | Works as expected |
 
 
 | Notifications and errors | Result | Outcome |
@@ -493,15 +494,15 @@ The testing will be done manually
 | You have signed out | Notified when you have signed out | Works as expected |
 | Successfully signed in as ... | Notified when you have signed in | Works as expected |
 | You are logged in as ... | Notified who you are signed in as | Works as expected |
-| Your post has been shared success! | Notified that post was created successful | Works as expected |
+| Your post has been a shared success! | Notified that post was created successful | Works as expected |
 | Your post has been updated successfully! | Notified that post was updated successful | Works as expected |
-| Comment was posted sucsefully | Notified that comment was successful | Works as expected |
+| Comment was posted successfully | Notified that comment was successful | Works as expected |
 | Comment was successfully updated! | Notified that comment was updated successful | Works as expected |
 | Are you sure you want to delete your comment? This action cannot be undone. | Notified that before comment was deleted | Works as expected |
 | Comment deleted! | Notified that comment was deleted successful | Works as expected |
 | Are you sure you want to delete this post? This can not be undone!!  | Notified that before Post was deleted | Works as expected |
 | Your post has been deleted successfully! | Notified that post was deleted successful | Works as expected |
-| Subscribed successfully! | Message after singing up for the news letter | Works as expected |
+| Subscribed successfully! | Message after signing up for the newsletter | Works as expected |
 | 404 - PAGE NOT FOUND | When searching for a page that does not exist | Works as expected |
 
 
@@ -511,14 +512,76 @@ The testing will be done manually
 | Time stamps | Views the time a post or comment is created | Works as expected|
 | Like ikon on index home page | Displays the correct count of likes | Works as expected|
 | Comment counter | Counts the correct amount of comments | Works as expected |
-| Author banner | Shows the correct author |Works as expected|
+| Author banner | Shows the correct author | Works as expected |
+| Title can not be the same | Does not create a post with the same title | Works as expected |
 
 
 ## Validator Testing
 
+### Responsiveness
+
+The responsiveness of the Webb ap was tested using "Am I Responsiveness"
+
+<details>
+<summary> Failed the first HTML validation I did this was the result
+</summary>
+
+![Responsiveness Testing](assets/images/amiresponsive.png)
+</details>
+
+### HTML Validation
+
+My html does contain comments to make it more easy for navigating through the html pages
+
+<details>
+<summary> Failed the first HTML validation I did this was the result
+</summary>
+
+![HTML Validator Testing](assets/images/htmlerror.png)
+</details>
+
+<details>
+<summary> Passed the Second HTML validation 
+</summary>
+
+![HTML Validator Testing](assets/images/htmlnoerror.png)
+</details>
+
+### CSS
+
+My CSS has no errors but do have warnings which are used for webkits
+
+<details>
+<summary> Passed the CSS validation 
+</summary>
+
+![CSS Validator Testing](assets/images/cssvalidation.png)
+</details>
+
+### Java Script
+
+My javascript passed the validation
+
+<details>
+<summary> Passed the javascript validation 
+</summary>
+
+![Javascript Validator Testing](assets/images/javascriptvalidation.png)
+</details>
 
 
-![Validator Testing]()
+### Python 
+
+My python code has no error here is a example of how it has been tested
+
+<details>
+<summary> Passed the Python validation 
+</summary>
+
+![Python Validator Testing](assets/images/pythonvalidation.PNG)
+</details>
+
+###
 
 # Deployment
 
@@ -571,7 +634,7 @@ The testing will be done manually
 6. Once created, click on the newly created database name
 7. The database URL and Password can be viewed here.
 
-## Cloudinary (Databse that stores the images)
+## Cloudinary (Database that stores the images)
 The API platform has been used to store images uploaded by users of the webpage
 1. Login to Cloudinary
 2. In the Dashboard, you can copy your API Environment Variable
@@ -585,7 +648,7 @@ This will download a full copy to your desktop
 2. Find the repository you wish to clone
 3. Find the green code button top right corner
 4. Select "Local", copy the HTTPS URL
-5. Go to Gitpod Workspace and navigate to "New Workspace"
+5. Go to Git Pod Workspace and navigate to "New Workspace"
 6. Paste the URL into the space provided
 7. Click "Create"
 
@@ -616,28 +679,17 @@ Will allow you to create a copy of the repository so changes can be made that wi
 - [elephantsql](https://www.elephantsql.com/) For database 
 - [Cloudinary](https://cloudinary.com/) Used for online static file storage
 
+- [Nu Html Checker](https://validator.w3.org/nu/) Validate HTML Code
+- [jigsaw](https://jigsaw.w3.org/css-validator/) Validate CSS
+- [jshint](https://jshint.com/) Javascript validator
 - [CI Python Linter](https://pep8ci.herokuapp.com/) Validate the code
 - [amiresponsive](https://ui.dev/amiresponsive) to check responsiveness
-- []() For
-- []() For 
-- []() For
-- []() For
-- []() For
-- []() For 
-- []() For
 
 - [Wire Frames](https://balsamiq.com/) For wire Frames
 - [dbdiagram](https://dbdiagram.io/home) For Database mockup
 - [Snipping Tool](https://freesnippingtool.com/download) to create sniped images
+- [Google Docs](https://docs.google.com/document/d/1LJFXrX4moJpg_K8NDJrwBUzqA_MaHu8Six_9CGkg90o/edit?addon_store) Spelling check
 - [colors tool](https://coolors.co/34a426-48817a-3c8ca7) Create color pallet
-
-- []() For
-- []() For 
-- []() For
-- []() For
-- []() For
-- []() For 
-- []() For
 
 
 # Credits
@@ -650,20 +702,21 @@ Will allow you to create a copy of the repository so changes can be made that wi
 
 - [Slack Comunity](https://github.com/roc-11/pp4-jetset-journal) roc-11
 - [Slack Comunity](https://github.com/KimBergstroem/gamers_insight-CRUD-Blog-App) KimBergstroem
-- [Slack Comunity](https://github.com/helenmurugan/the-groomers-network?tab=readme-ov-file) helenmurugan
-- [Slack Comunity](https://app.slack.com/client/T0L30B202/search) Congiguring summernote
+- [Slack Comunity](https://github.com/helenmurugan/the-groomers-network?tab=readme-ov-file) helen murugan
+- [Slack Comunity](https://app.slack.com/client/T0L30B202/search) Configuring summernote
 
 - [stackoverflow](https://stackoverflow.com/questions/61058107/remove-char-from-the-required-field-label-in-form ) Removing the astrix from crispy forms 
 - [stackoverflow](https://stackoverflow.com/questions/68968059/how-can-i-allow-users-to-create-their-own-posts-in-django) how to create user posts
 
 - [w3schools](https://www.w3schools.com/howto/howto_css_hero_image.asp) Hero image coding help
 
-- [sarahtitus](https://www.sarahtitus.com/25-best-travel-destinations-color-palettes/) For color pallet insperation
+- [sarahtitus](https://www.sarahtitus.com/25-best-travel-destinations-color-palettes/) For color pallet inspiration
 - [backpackMe](https://bkpk.me/traveling-to-india-during-covid-19-restrictions/) TRAVELING TO INDIA DURING COVID-19 RESTRICTIONS
 - [On The Luce](https://www.ontheluce.com/weekend-in-neath-port-talbot-wales/) A WEEKEND IN NEATH PORT TALBOT, WALES: 2-DAY ITINERARY
 - [On The Luce](https://www.ontheluce.com/things-to-do-in-symi-greece/) SHIPS AND SPONGES: THE BEST THINGS TO DO IN SYMI, GREECE
 
 - [pexels](https://www.pexels.com/photo/lake-and-mountain-417074/) Hero image
-- [unsplash](https://unsplash.com/s/photos/placeholder) For Placeholder iamge
+- [unsplash](https://unsplash.com/s/photos/placeholder) For Placeholder image
 - [Unsplash](https://unsplash.com/photos/green-artificial-palm-tree-on-seashore-7RyfX2BHoXU) For about image
 - [font awsome](https://fontawesome.com/v5/icons/twitter?f=brands&s=solid) For icons
+

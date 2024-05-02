@@ -56,8 +56,7 @@ def post_detail(request, slug):
              "comments": comments,
              "comment_counter": comment_counter,
              "comment_form": comment_form,
-        },
-)
+        },)
 
 
 def comment_edit(request, slug, comment_id):
@@ -76,9 +75,11 @@ def comment_edit(request, slug, comment_id):
             comment.post = post
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment was successfully updated!')
+            messages.add_message(request, messages.SUCCESS,
+                                 'Comment was successfully updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating comment!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
@@ -95,7 +96,8 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
@@ -126,7 +128,6 @@ class CreatePost(SuccessMessageMixin, CreateView):
     form_class = PostCreateForm
     success_url = reverse_lazy("home")
     success_message = "Your post has been shared success!"
-    
 
     def form_valid(self, form):
         """
@@ -135,8 +136,8 @@ class CreatePost(SuccessMessageMixin, CreateView):
         form.instance.author = self.request.user
         form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
-    
-    
+
+
 class PostUpdate(SuccessMessageMixin, UpdateView):
     """
     Updating a user post
@@ -159,8 +160,8 @@ class PostUpdate(SuccessMessageMixin, UpdateView):
         Takes user back to home page after the update was successful
         """
         return reverse('post_detail', kwargs={"slug": self.object.slug})
-    
-    
+
+
 class DeletePost(SuccessMessageMixin, DeleteView):
     """
     Deleting an existing blog post created by a user
@@ -169,15 +170,15 @@ class DeletePost(SuccessMessageMixin, DeleteView):
     template_name = "delete_post.html"
     success_url = reverse_lazy("home")
     success_message = "Your post has been deleted successfully!"
-    
+
     def test_func(self):
         """
         Validate that the current user is the author of the post being deleted
         """
         post = self.get_object()
         return self.request.user == post.author
-    
-    
+
+
 def page_not_found(request, exception):
     """
     404 Page Not Found Error.

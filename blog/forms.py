@@ -10,18 +10,20 @@ class PostCreateForm(forms.ModelForm):
     """
     class Meta:
         model = Post
-        fields = ('title', 'excerpt', 'holiday_season', 'holiday_length', 'experience',
-                  'bag_recommendation','cost_expected', 'featured_img',) #status
-        
+        fields = ('title', 'excerpt', 'holiday_season',
+                  'holiday_length', 'experience',
+                  'bag_recommendation', 'cost_expected', 'featured_img',)
+
         widgets = {
             "experience": SummernoteWidget(attrs={"class": "form-control"}),
-            "bag_recommendation": SummernoteWidget(attrs={"class": "form-control"}),
+            "bag_recommendation": SummernoteWidget(
+                attrs={"class": "form-control"}),
             "cost_expected": SummernoteWidget(attrs={"class": "form-control"}),
         }
+
 
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
-        labels = {'body': 'Comment',}
-        
+        labels = {'body': 'Comment', }

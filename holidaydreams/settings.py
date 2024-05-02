@@ -59,7 +59,7 @@ INSTALLED_APPS = [
 ]
 
 SUMMERNOTE_CONFIG = {
-    'iframe': False,
+    'iframe': True,
     'summernote': {
         'width': '100%',
         'height': '300px',

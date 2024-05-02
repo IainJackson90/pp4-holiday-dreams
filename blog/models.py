@@ -4,10 +4,8 @@ from cloudinary.models import CloudinaryField
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
-# SEASONS = (('spring', "Spring"), ('summer', "Summer"), ('autumn', "Autumn"), ('winter', "Winter"))
-LIKE_Bool = (('Like', 'Like'),('Unlike', 'Unlike'))
+LIKE_Bool = (('Like', 'Like'), ('Unlike', 'Unlike'))
 
-# Create your models here.
 
 class Post(models.Model):
     """
@@ -21,7 +19,7 @@ class Post(models.Model):
     holiday_season = models.CharField(max_length=200, blank=True)
     holiday_length = models.CharField(max_length=200, blank=True)
     experience = models.TextField(blank=True)
-    bag_recommendation =  models.TextField(max_length=200, blank=True)
+    bag_recommendation = models.TextField(max_length=200, blank=True)
     cost_expected = models.TextField(max_length=200, blank=True)
     featured_img = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
@@ -39,7 +37,7 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} | Posted by {self.author}"
-     
+
     def likes_count(self):
         return self.likes.count()
 
@@ -61,8 +59,8 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
-    
-    
+
+
 class Like(models.Model):
     """
     Stores a like related to :model:`auth.User`
@@ -74,4 +72,3 @@ class Like(models.Model):
 
     def __str__(self):
         return str(self.post)
-

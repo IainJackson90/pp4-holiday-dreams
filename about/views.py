@@ -8,7 +8,6 @@ def about_blog(request):
     """
     A Page that will display a descriptive insight about what the
     blog is about and the goals of the site.
-    
     **Template**
     :template:`about/about.html`
     """
@@ -16,7 +15,8 @@ def about_blog(request):
         subscribe_form = SubscribeForm(data=request.POST)
         if subscribe_form.is_valid():
             subscribe_form.save()
-            messages.add_message(request, messages.SUCCESS, "Subscribed successfully!")
+            messages.add_message(request, messages.SUCCESS,
+                                 "Subscribed successfully!")
 
     about = About.objects.all().order_by('-updated_on').first()
     subscribe_form = SubscribeForm()
@@ -27,3 +27,4 @@ def about_blog(request):
         {"about": about,
          "subscribe_form": subscribe_form},
     )
+    
