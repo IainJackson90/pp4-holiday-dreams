@@ -7,6 +7,14 @@
 
 {% block content %}
 
+<div class="hero-image">
+    <div class="hero-text">
+      <h1 class="mb-4 hero-slogan">
+        Sign In Here
+      </h1>
+    </div>
+  </div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
@@ -26,7 +34,7 @@
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+                <button class="btn btn-signup right mb-4" type="submit">{% trans "Sign In" %}</button>
             </form>
         </div>
     </div>
