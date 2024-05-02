@@ -20,7 +20,6 @@
     <div class="row">
         <div class="col text-right">
             <!-- Updated on field goes in here -->
-
             <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
         </div>
     </div>
@@ -32,9 +31,6 @@
                 paid free holiday!
                 And describe your Dream Holiday to us who knows it might be a click away!
             </p>
-
-            <!-- add your form here. Your submit button should 
-                                have the classes of btn, btn-secondary -->
             <form method="post">
                 {{ subscribe_form | crispy }}
                 {% csrf_token %}

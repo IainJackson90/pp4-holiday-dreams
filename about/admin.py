@@ -7,9 +7,6 @@ from django_summernote.admin import SummernoteModelAdmin
 class AboutAdmin(SummernoteModelAdmin):
     summernote_fields = ('body',)
 
-# Note: admin.ModelAdmin is the standard way of registering
-#       the model with the admin panel. We do it differently
-#       above because we are supplying Summernote fields.
 
 @admin.register(Subscribe)
 class SubscribeAdmin(admin.ModelAdmin):

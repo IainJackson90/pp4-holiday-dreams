@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.contrib import messages
 from .models import About
 from .forms import SubscribeForm
-# Create your views here.
 
 
 def about_blog(request):

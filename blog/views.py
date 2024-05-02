@@ -10,13 +10,8 @@ from .models import Post, Comment, Like, User
 from .forms import CommentForm, PostCreateForm
 
 
-# Create your views here.
-
-
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
-    # queryset = Post.objects.all()
-    # template_name = "post_list.html"
     template_name = "blog/index.html"
     paginate_by = 9
 
@@ -49,7 +44,6 @@ def post_detail(request, slug):
             messages.add_message(
                 request, messages.SUCCESS,
                 'Comment was posted sucsefully'
-                # Have to change this because their should be no approval
             )
 
     comment_form = CommentForm()
@@ -64,34 +58,6 @@ def post_detail(request, slug):
              "comment_form": comment_form,
         },
 )
-
-
-# def recommendation_detail(request, slug, post_id, Post):
-#     """
-#     Display an individual :model:`blog.Post`.
-
-#     **Context**
-
-#     ``post``
-#         An instance of :model:`blog.Post`.
-
-#     **Template:**
-
-#     :template:`blog/post_detail.html`
-#     """
-    
-#     queryset = Recommendation.objects
-#     # recommendation = get_object_or_404(queryset, slug=slug)
-#     recommendation = get_object_or_404(Post, pk=post_id)
-#     # recommendation = Recommendation
-
-#     return render(
-#         request,
-#         "blog/post_detail.html",
-#         {
-#             "recommendation": recommendation
-#         },
-#     )
 
 
 def comment_edit(request, slug, comment_id):
