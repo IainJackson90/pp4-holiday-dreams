@@ -432,23 +432,46 @@ You can only use the like button if you are logged in as a user
 
 ## Future Features
 
- 
+- Create a my profile or the users that sing up
+- Have a search feature for a user that is singed in
+- Have a report feature to report inappropriate blogs, and comments
+- Add a admin Profile to the Webb app with some admin powers to monitor the web app
+- Add a announcement page where winners of the draw could be displayed 
+- Bug report Page
+- Updated more user friendly create a post form
+- Better layout for the sign up page
 
 # Testing
 
-
+The testing will be done manually
 
 ## Known Bugs
 
-
+1. The Hero image might have too mush hight on smaller devices
+2. The Post on the home page are big (not sure if I like it that way or if I want to change it, if I had a user base audience this could be reviewed)
+3. When a user leaves a comment and refreshes the page web browser it will duplicate there comment 
 
 ## Fixed Bugs
 
-
+1. I originally wanted to have a dropdown of different seasons on the create a post page and I could only get it to accept a integer value witch was not working correctly so instead opted to use a text field 
+2. At first i used a text fields for the create a post form but the text field did not alow for any paragraphs or spacing the text did not look pleasing at all, i then used summernote editors instead
+3. The summernote editors in the create a post would be adaptive to smaller devices after a lot of research I figured out that I could customize summernote editor in the settings.py file
+4. Other bugs are minor spacing of buttons and layouts that had been fixed 
 
 ## Manual Testing
 
-| What was tested | Result | Outcome |
+| What was tested as a visitor | Result | Outcome |
+|:---:|:---:|:---:|
+| Navigation bar links | Viewed every page | Works as expected |
+| The logo on the navigation bar | Takes you to the home page when clicked on | Works as expected|
+| Clicking the Sign Up or Log in button | Takes yoy to the sign in page | Works as expected|
+| Clicking on a post | Opens up the post | Works as expected |
+| Clicked on the hart like icon | Nothing happened |Works as expected|
+| Clicked on the navigation button at the bottom of the page | Took me to the next page | Works as expected |
+| Clicked on the social links in th footer | Directs me to the social pages | Works as expected |
+|Sign up to be a user | Shows I am now singed with user name notification | Works as expected |
+
+| What was tested as a User | Result | Outcome |
 |:---:|:---:|:---:|
 |------------|-----------|------------|
 |------------|-----------|------------|
@@ -458,6 +481,7 @@ You can only use the like button if you are logged in as a user
 |------------|-----------|------------|
 |------------|-----------|------------|
 |------------|-----------|------------|
+
 
 ![Manual Testing]()
 
